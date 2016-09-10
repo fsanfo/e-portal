@@ -1,0 +1,12 @@
+<h4><strong>Lista de Tarefas</strong></h4>
+<form class="form-inline" action="index.html" method="post">
+  <label for="newtodo">
+    <input type="text" class="form-control input-sm" placeholder="digite nova tarefa..." [(ngModel)]="todoTitle">
+  </label>
+  <button type="button" class="btn btn-default" (click)="newTodo()" [disabled]="!todoTitle">
+    <span class="glyphicon glyphicon-ok"></span>
+  </button>
+</form>
+<p *ngFor="let item of todos">
+  <button type="button" class="btn btn-sm" [class]="item.flag ? 'btn-success':'btn-danger'" (click)="item.flag = !item.flag">{{item.title}} #{{item.id}}</button>
+</p>
